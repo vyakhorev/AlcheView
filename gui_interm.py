@@ -60,7 +60,7 @@ class c_RecordList_intm(c_ListIntermidiate):
         s = ""
         # Вставляем ссылку для печати
         s += obj.date_added.strftime("%Y %B %d (%A)")
-        s += "   <u><b>" + obj.headline + "<b></u><br>"
+        s += "   <b>" + obj.headline + "<b><br>"
         s += self.create_edit_link(obj,"edit this record")+"<br>"
         s += obj.text
         return s
