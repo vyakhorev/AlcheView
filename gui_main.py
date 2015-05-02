@@ -5,6 +5,7 @@ import sys
 import datetime
 
 from gui.ui_MainDataForm import Ui_MainDataWindow
+from gui_style import c_stylish
 
 import db_main
 import gui_interm
@@ -22,17 +23,15 @@ class gui_MainWindow(QtGui.QMainWindow,Ui_MainDataWindow):
 
         self.record_list_intm = gui_interm.c_RecordList_intm([db_main.c_EventRecord, db_main.c_NewsRecord])
         self.textBrowser_DataView.set_intm(self.record_list_intm)
-        self.textBrowser_DataView.setStyleSheet("background-color: #AAAAAA;")
 
-
-
-class gui_LinkedBrowser(QtGui.QTextBrowser):
+class gui_LinkedBrowser(QtGui.QTextBrowser, c_stylish):
 
     def set_intm(self,intm):
         self.the_interm = intm
         self.setHtml(intm.build_HTML())
         self.anchorClicked.connect(self.print_url)
         self.anchorClicked.connect(self.parse_url)
+        self.apply_style() # from c_stylish
 
     def print_url(self,some_url):
         print some_url.toString()
@@ -46,5 +45,4 @@ class gui_LinkedBrowser(QtGui.QTextBrowser):
         print some_url
 
     def print_record(self,obj):
-
         print str(obj)

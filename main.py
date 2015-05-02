@@ -7,7 +7,7 @@ Created on Wed Mar 20 10:12:03 2013
 """
 
 if __name__ == "__main__":
-    from main_gui import *
+    from gui_main import *
     reload(sys)
     sys.setdefaultencoding('utf-8')
     app = QtGui.QApplication(sys.argv)
