@@ -22,6 +22,7 @@ class gui_MainWindow(QtGui.QMainWindow,Ui_MainDataWindow):
 
         self.record_list_intm = gui_interm.c_RecordList_intm([db_main.c_EventRecord, db_main.c_NewsRecord])
         self.textBrowser_DataView.set_intm(self.record_list_intm)
+        self.textBrowser_DataView.setStyleSheet("background-color: #AAAAAA;")
 
 
 
